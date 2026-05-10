@@ -4,13 +4,31 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@app/*": ["./app/*"],
-      "@features/*": ["./src/features/*"],
-      "@core/*": ["./src/core/*"],
-      "@ui/*": ["./src/ui/*"],
-      "@assets/*": ["./assets/*"],
-      "@tests/*": ["./tests/*"]
+      "@app/*": [
+        "./app/*"
+      ],
+      "@features/*": [
+        "./src/features/*"
+      ],
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@tests/*": [
+        "./tests/*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.d.ts", "expo-env.d.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.d.ts",
+    "expo-env.d.ts",
+    ".expo/types/**/*.ts"
+  ]
 }

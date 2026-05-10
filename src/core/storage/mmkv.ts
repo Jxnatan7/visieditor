@@ -1,20 +1,21 @@
-import { createMMKV } from 'react-native-mmkv';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { PersistStorage, StorageValue } from 'zustand/middleware';
 
-export const mmkv = createMMKV({ id: 'visieditor-store' });
-
+// Uses AsyncStorage instead of react-native-mmkv so the app works in Expo Go.
+// react-native-mmkv@4 requires react-native-nitro-modules (native build only).
+// Swap back to MMKV once you set up a development build via EAS.
 export function createMmkvStorage<T>(): PersistStorage<T> {
   return {
-    getItem: (key): StorageValue<T> | null => {
-      const value = mmkv.getString(key);
-      if (!value) return null;
+    getItem: async (key): Promise<StorageValue<T> | null> => {
+      const value = await AsyncStorage.getItem(key);
+      if (value == null) return null;
       return JSON.parse(value) as StorageValue<T>;
     },
-    setItem: (key, value) => {
-      mmkv.set(key, JSON.stringify(value));
+    setItem: async (key, value) => {
+      await AsyncStorage.setItem(key, JSON.stringify(value));
     },
-    removeItem: (key) => {
-      mmkv.remove(key);
+    removeItem: async (key) => {
+      await AsyncStorage.removeItem(key);
     },
   };
 }
