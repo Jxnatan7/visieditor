@@ -1,4 +1,4 @@
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 
 const CACHE_ROOT = `${FileSystem.cacheDirectory}repos/`;
 const MAX_CACHE_BYTES = 200 * 1024 * 1024; // 200 MB

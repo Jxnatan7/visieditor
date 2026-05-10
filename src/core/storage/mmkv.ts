@@ -1,7 +1,7 @@
-import { MMKV } from 'react-native-mmkv';
+import { createMMKV } from 'react-native-mmkv';
 import type { PersistStorage, StorageValue } from 'zustand/middleware';
 
-export const mmkv = new MMKV({ id: 'visieditor-store' });
+export const mmkv = createMMKV({ id: 'visieditor-store' });
 
 export function createMmkvStorage<T>(): PersistStorage<T> {
   return {
@@ -14,7 +14,7 @@ export function createMmkvStorage<T>(): PersistStorage<T> {
       mmkv.set(key, JSON.stringify(value));
     },
     removeItem: (key) => {
-      mmkv.delete(key);
+      mmkv.remove(key);
     },
   };
 }

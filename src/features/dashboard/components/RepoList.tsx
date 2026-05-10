@@ -82,7 +82,6 @@ export function RepoList({ filter, searchQuery }: RepoListProps) {
     <FlashList
       data={filtered}
       renderItem={renderItem}
-      estimatedItemSize={120}
       keyExtractor={(item) => item.id.toString()}
       refreshControl={
         <RefreshControl

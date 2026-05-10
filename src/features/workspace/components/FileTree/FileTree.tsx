@@ -75,7 +75,6 @@ export function FileTree({ nodes, isLoading, onFilePress }: FileTreeProps) {
     <FlashList
       data={nodes}
       renderItem={renderItem}
-      estimatedItemSize={ITEM_HEIGHT}
       keyExtractor={(item) => item.path}
       contentContainerStyle={{ paddingBottom: spacing[16] }}
     />
