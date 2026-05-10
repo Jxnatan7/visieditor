@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "visieditor",
+    "slug": "visieditor",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "visieditor",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#282A36"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.visieditor.app",
+      "associatedDomains": ["applinks:visieditor.app"],
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Used for image preview",
+        "NSCameraUsageDescription": "Not used"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#282A36"
+      },
+      "package": "com.visieditor.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "visieditor.app",
+              "pathPrefix": "/"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Inter-Regular.otf",
+            "./assets/fonts/Inter-Medium.otf",
+            "./assets/fonts/Inter-SemiBold.otf",
+            "./assets/fonts/Inter-Bold.otf",
+            "./assets/fonts/JetBrainsMono-Regular.ttf"
+          ]
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
